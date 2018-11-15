@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+div.imgFundo{
+    width: 100%;
+    height:40vh;
+    border: 3px solid #fdc303;
+}
+div.logoPefil{
+    position: absolute;
+    top:30%;
+    left:40%;
+}

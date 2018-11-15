@@ -14,11 +14,9 @@
             <a href="" class="imgLogo ">
                 <img class="circle" src="Imagens/scissors-badge.png" width="65px" height="65px" alt="">
                 <span class="logo">
-                Beauty Calendar
+                    Beauty Calendar
                 </span>
-                </a>
-            
-           
+            </a> 
             <ul class="right">
                 <li><a class="abrirModal" href="#!"> <img src="Imagens/person.png" style="position:relative; top:10px;" alt=""><span class="nome"> Nome </span></a></li>
 

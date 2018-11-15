@@ -7,6 +7,14 @@ fieldset{
   color: #fdc303!important;
 }
 /* label focus color */
+.input-field input[type=password]:focus + label {
+  color: #fdc303!important;
+}
+/* label focus color */
+.input-field input[type=email]:focus + label {
+  color: #fdc303!important;
+}
+/* label focus color */
 .input-field input[type=text] {
   border-bottom: 1px solid #f9a825 !important;
   box-shadow: 0 1px 0 0 #f9a825 !important;
@@ -16,8 +24,18 @@ fieldset{
   border-bottom: 1px solid #f9a825 !important;
   box-shadow: 0 1px 0 0 #f9a825 !important;
 }
+/* label focus color */
+.input-field input[type=email] {
+  border-bottom: 1px solid #f9a825 !important;
+  box-shadow: 0 1px 0 0 #f9a825 !important;
+}
 /* label underline focus color */
 .input-field input[type=text]:focus {
+  border-bottom: 1px solid #fdc303 !important;
+  box-shadow: 0 1px 0 0 #fdc303 !important;
+}
+/* label underline focus color */
+.input-field input[type=email]:focus {
   border-bottom: 1px solid #fdc303 !important;
   box-shadow: 0 1px 0 0 #fdc303 !important;
 }

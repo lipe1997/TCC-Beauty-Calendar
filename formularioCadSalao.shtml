@@ -72,8 +72,8 @@
                     </div>
                     <div class="select col l6 m12 s12">
                         <i class="material-icons prefix">location_city</i>
-                        <label for="UF" class="purple-text text-darken-3">UF <abbr title="campo obrigatório">*</abbr></label>
-                        <select name="UF" class="browser-default purple-text text-darken-3" id="UF">
+                        <label for="UF" class="grey-text">UF <abbr title="campo obrigatório">*</abbr></label>
+                        <select name="UF" class="browser-default yellow-text text-darken-3" id="UF">
                             <option value="AC"> AC </option>
                             <option value="AL"> AL </option>
                             <option value="AP"> AP </option>

@@ -19,7 +19,7 @@
 <body>
     <!--Título da página-->
     <div class="parallax-container p1">
-        <!--#include virtual = "barra1.html"-->
+        <!--#include virtual = "barraPaginaHome.html"-->
         <div class="parallax">
             <img src="Imagens/img1.jpg" width="100%">
         </div>

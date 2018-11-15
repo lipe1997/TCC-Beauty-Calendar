@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,81 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.css" />
     <link rel="stylesheet" href="css/perfilSalao.css">
-    
+
 </head>
+
 <body>
     <div class="imgFundo ">
+
         <img src="./Imagens/fundo4.jpg" width="100%" height="100%" alt="">
         <div class="logoPefil">
             <img src="Imagens/boy.png" width="30%" alt="">
         </div>
+
     </div>
+
     <div class="infoSalao">
+        <div class="favorito">
+            <img src="Imagens/coracao.png" title="Adicionar aos favoritos" width="100%" alt="">
+        </div>
         <span id="nomeSalao">Nome do salão</span>
         <span id="cidade_UF">Cidade - UF</span>
         <span id="ruaNumero">Rua - número</span>
         <span id="celular">Celular</span>
         <span id="email">Email</span>
+        <span id="descricao">
+            <h5>Descrição</h5>
+            <p>
+                Corte masculino, Progressiva,Corte infantil,Escova,Barba
+            </p>
+        </span>
     </div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section row yellow-text container">
+        <div class="col s12 push-s2 ">
+            <ul class="tabs black yellow-text">
+                <li class="tab col s3"><a href="#servicos" class="yellow-text">Serviços</a></li>
+                <li class="tab col s3"><a href="#galeria" class="yellow-text">Galeria</a></li>
+                <li class="tab col s3"><a href="#comentarios" class="yellow-text">Comentários</a></li>
+            </ul>
+        </div>
+        <!-- Aba de serviços -->
+        <div id="servicos " class="col s12 ">
+            <div class="servicoExemplo ">
+                <img src="Imagens/corte.png" width="50%" height="" alt="">
+                <span id="nomeServico">Corte - Masculino</span>
+                <span id="preco">A PARTIR DE: $100,00</span>
+                <span id="msg" >Imagem meramente ilustrativa</span>
+                <button href="#!" class="btnAgendar">Agendar</button>
+            </div>
+        </div>
+        <!-- Aba de galeria de fotos -->
+        <div id="galeria" class="col s12">
+            
+        </div>
+        <!-- Aba de comentarios-->
+        <div id="comentarios" class="col s12">
+            
+
+        </div>
+    
+    </div>
+
     <script src="js/jquery.js"></script>
     <script src="js/materialize.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tabs').tabs();
+        });
+        var src = $(".favorito img").attr("src")
+        $(".favorito img").mouseenter(function () {
+                $(".favorito img").attr("src", "Imagens/coracao1.png")
+        })
+        $(".favorito img").mouseleave(function () {
+                $(".favorito img").attr("src", "Imagens/coracao.png")
+        })
+    </script>
 </body>
+
 </html>

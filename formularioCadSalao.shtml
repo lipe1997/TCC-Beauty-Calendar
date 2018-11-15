@@ -125,7 +125,7 @@
                     </div>
                     <div class="center col l12 m12 s12">
                         <a href="Home.shtml" class="btn-flat yellow-text text-darken-3">Cancelar</a>
-                        <input type="submit" class="btn yellow darken-3 white-text" value="Cadastrar">
+                        <input type="submit" class="btn yellow darken-3 white-text submit" value="Cadastrar">
                     </div>
                 </form>
             </fieldset>

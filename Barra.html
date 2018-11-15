@@ -1,0 +1,157 @@
+<div class="navv navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="HomeLogado.shtml" class="brand-logo"><img src="Imagens/scissors-badge.png" width="60vw" height="60vh">
+                <i class="right yellow-text text-darken-3 ">Beauty
+                    Calendar</i></a>
+            <ul class="right hide-on-med-and-down">
+                <a href="#" data-target="slide-out" class="nomeUsuario" onclick="chamarSide()"><img src="Imagens/person.png"
+                        alt="" width="30px" height="30px"></a>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<ul id="slide-out" class="sidenav">
+    <li><a href="#!" class="sidenav-close" onclick="fecharSide()"><i class="material-icons left">close</i> Fechar</a></li>
+    <li>
+        <div class="user-view">
+            <div class="imgEdit">
+                <a href="#editImgFundo" class="modal-trigger">
+                    <img src="Imagens/edit.png" alt="Editar Imagem" title="Editar Imagem de fundo" height="30px" width="35px">
+                </a>
+            </div>
+            <div class="background">
+                <img src="Imagens/fundo.jpg" width="300vw" class="imgFundo" height="200vh">
+            </div>
+            <img class="circle imgPerfil" src="Imagens/girl.png" width="50px" height="50px">
+            <span class="name">.</span>
+            <span class="name">.</span>
+
+        </div>
+    </li>
+    <li>
+        <h5 class="nome black-text">Paula Henriques</h5>
+    </li>
+    <li>
+        <h6 class="cidade grey-text">Itapevi - SP</h6>
+    </li>
+    <li><a href="#!"><i class="material-icons red-text right">favorite</i>Salões favoritos</a></li>
+    <li><a href="#editInfo" class="modal-trigger" onclick="tabela()">Editar Perfil</a></li>
+    <li><a href="#!" class="modal-trigger">Agendamentos <span class="badge1 pulse right red-text" data-badge="1">Novo!!</span></a></li>
+    <li><a href="#!">Sair</a></li>
+</ul>
+<!-- Modal Editar imagem de fundo -->
+<div id="editImgFundo" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Editar Imagem</h4>
+        <form action="editImgFundo.h6hp" method="post" class="formImgFundo" enctype="multipart/form-data">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input type="file" id="file" name="img">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <div class="img">
+
+            </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" onclick="cancelarImg()" class="modal-action modal-close btn white-text purple">Cancelar</a>
+        <input type="submit" class="btn-flat" value="Salvar">
+        </form>
+    </div>
+</div>
+
+<!-- Modal Editar informações do usuario -->
+<div id="editInfo" class="editInfo modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4 class="center">Editar informações</h4>
+
+        <form action="" method="post">
+            <div class="tabela responsive-table">
+                <a class="btn purple white-text right" onclick="btnEditar()">Editar</a>
+                <table class="responsive-table">
+                    <tr class="nome">
+                        <td><strong> Nome </strong></td>
+                    </tr>
+                    <tr class="celular">
+                        <td> <strong>Celular </strong></td>
+                    </tr>
+                    <tr class="cpf">
+                        <td> <strong> CPF </strong></td>
+                    </tr>
+                    <tr class="logradouro">
+                        <td><strong> Logradouro("Rua, Estrada, Viela e etc) </strong></td>
+                    </tr>
+                    <tr class="bairro">
+                        <td> <strong> Bairro </strong></td>
+                    </tr>
+                    <tr class="uf">
+                        <td> <strong> UF </strong></td>
+                    </tr>
+                    <tr class="cidade">
+                        <td> <strong> Cidade </strong></td>
+                    </tr>
+                    <tr class="numero">
+                        <td> <strong> Número </strong></td>
+                    </tr>
+                    <tr class="complemento">
+                        <td> <strong> Complemento </strong></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        <div class="editarInformacoes">
+            <form action="" method="POST" class="formEditar">
+                <div class="row col l12">
+                    <div class="input-field col l6 ">
+                        <input type="text" name="nome" id="nome1" placeholder="">
+                        <label for="nome1">Nome</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="celular" id="celular1" onkeydown="maskara('celular')" placeholder="">
+                        <label for="celular1">Celular</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="cpf" onkeydown="maskara('cpf')" id="cpf1" placeholder="">
+                        <label for="cpf1">CPF</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="logradouro" id="logradouro1" placeholder="">
+                        <label for="logradouro1">Logradouro</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="bairro" id="bairro1" placeholder="">
+                        <label for="bairro1">Bairro</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="cidade" id="cidade1" placeholder="">
+                        <label for="cidade1">Cidade</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="numero" id="numero1" placeholder="">
+                        <label for="numero1">Número</label>
+                    </div>
+                    <div class="input-field col l6">
+                        <input type="text" name="complemento" id="complemento1" placeholder="">
+                        <label for="complemento1">Complemento</label>
+                    </div>
+                    <div class="col l12 ">
+                        <input type="submit" class="btn-flat right" value="Salvar">
+                        <a class="modal-action btn purple white-text " onclick="btnCancelar()">Cancelar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close btn black white-text">Sair</a>
+    </div>
+</div>

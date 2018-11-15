@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/modalEditInfo.css">
+    <link rel="stylesheet" href="css/materialize.css">
+    <title>Perfil</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/infoCli.js"></script>
+</head>
+
+<body onload="PegarInfo()">
+    <div class="fundoModal">
+        <a class="abrirModalClose close" href="#!"><img src="Imagens/close.png" alt="" width="30%"></a>
+        <div class="sidebar">
+            <div id="fundo">
+                <img src="Imagens/fundo.jpg" id="imgFundo" alt="" width="100%" height="100%">
+                <a href="#editImgFundo" class="modal-trigger">
+                    <div class="fundo">
+
+                        <img src="Imagens/camera.png" alt="" width="10%">
+
+                        <span class="black-text">Mudar imagem de fundo</span>
+
+                    </div>
+                </a>
+                <div class="info">
+                </div>
+                <span class="nome">Paula H. Campos</span><br>
+                <span class="estado">Itapevi - SP</span>
+
+            </div>
+            <div id="imgChange">
+                <img src="Imagens/boy.png" class="imgPerfil circle" id="imgPerfil" alt="" width="100%" height="100%">
+                <div class="imgChange" title="Trocar imagem de fundo">
+                    <a href="#editImgPerfil" class="modal-trigger">
+                        <img src="Imagens/camera.png" alt="" width="35%">
+                    </a>
+                </div>
+            </div>
+            <ul>
+
+                <li> <a href="#!" title=""> Salões Favoritos <img src="Imagens/coracao1.png" width="25px" alt="" style="position:absolute; right:10%"></a></li>
+                <li onclick="abrirEditar()"> <a href="#!">Editar Perfil </a></li>
+                <li><a href="#!"> Notificações <span class="badge1 " data-badge="2">Novo!!</span></a></li>
+                <li><a href="Home.shtml"> Sair </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modalEditInfo">
+        <a class="abrirModalInfo close1" onclick="abrirEditar()" href="#!"><img src="Imagens/close.png" alt="" width="40%"></a>
+        <div class="modalCorpo">
+            <h4>Editar Informações</h4>
+            <a class="btnEditar">Editar</a>
+            <table class="tabela ">
+                <tr class="nomeTb">
+                    <td><strong> Nome </strong></td>
+                </tr>
+                <tr class="celular">
+                    <td> <strong>Celular </strong></td>
+                </tr>
+                <tr class="cpf">
+                    <td> <strong> CPF </strong></td>
+                </tr>
+                <tr class="logradouro">
+                    <td><strong> Logradouro("Rua, Estrada, Viela e etc) </strong></td>
+                </tr>
+                <tr class="bairro">
+                    <td> <strong> Bairro </strong></td>
+                </tr>
+                <tr class="uf">
+                    <td> <strong> UF </strong></td>
+                </tr>
+                <tr class="cidade">
+                    <td> <strong> Cidade </strong></td>
+                </tr>
+                <tr class="numero">
+                    <td> <strong> Número </strong></td>
+                </tr>
+                <tr class="complemento">
+                    <td> <strong> Complemento </strong></td>
+                </tr>
+            </table>
+        </div>
+        <div class="modalCorpo1">
+            <form action="" method="POST" id="formEdition">
+                <div class="row col l12 m12 s12">
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="nome" id="nome1" placeholder="">
+                        <label for="nome1">Nome</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="celular" id="celular1" placeholder="">
+                        <label for="celular1">Celular</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="cpf" id="cpf1" placeholder="">
+                        <label for="cpf1">CPF</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="logradouro" id="logradouro1" placeholder="">
+                        <label for="logradouro1">Logradouro("rua, estrada, viela e etc")</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="bairro" id="bairro1" placeholder="">
+                        <label for="bairro1">Bairro</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="cidade" id="cidade1" placeholder="">
+                        <label for="cidade1">Cidade</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="numero" id="numero1" placeholder="">
+                        <label for="numero1">Número</label>
+                    </div>
+                    <div class="input-field col l6 m6 s12">
+                        <input type="text" name="complemento" id="complemento1" placeholder="">
+                        <label for="complemento1">Complemento(casa,ap)</label>
+                    </div>
+                </div>
+                <input type="submit" class="btn yellow darken-3 white-text right" value="Salvar">
+                <a href="#!" class="btn white yellow-text text-darken-3" onclick="abrirFecharModalEdit()">Cancelar</a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Editar imagem de perfil -->
+    <div id="editImgPerfil" class="modal">
+        <form action="" class="formImgPerfil" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="file-field input-field">
+                    <div class="btn yellow darken-3 white-text">
+                        <span>File</span>
+                        <input type="file" id="file" name="img">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn modal-action yellow darken-3 black-text" value="Salvar">
+                <a href="#!" onclick="cancelarImg()" class="modal-action modal-close btn-flat left">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Editar imagem de Fundo -->
+    <div id="editImgFundo" class="modal">
+        <form action="" class="formImgFundo" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="file-field input-field">
+                    <div class="btn yellow darken-3 white-text">
+                        <span>File</span>
+                        <input type="file" id="file1" name="img1">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn modal-action yellow darken-3 black-text" value="Salvar">
+                <a href="#!" onclick="cancelarImg()" class="modal-action modal-close btn-flat left">Cancelar</a>
+                <a href="#!" class="fechar modal-action modal-close"></a>
+            </div>
+        </form>
+    </div>
+
+    <!-- 
+        
+      -->
+    <script>
+        $(document).ready(function () {
+            $('#editImgPerfil.modal').modal({
+                dismissible: false,
+            });
+            $('#editImgFundo.modal').modal({
+                dismissible: false,
+            });
+        })
+        $("#imgChange").mouseenter(function () {
+            $(".imgChange").css({
+                "display": "block",
+                "cursor": "pointer"
+            });
+        });
+        $("#imgChange").mouseleave(function () {
+            $(".imgChange").css("display", "none");
+        });
+        $("#fundo").mouseenter(function () {
+            $(".fundo").css({
+                "display": "block",
+                "cursor": "pointer"
+            });
+        });
+        $("#fundo").mouseleave(function () {
+            $(".fundo").css("display", "none");
+        });
+        $(".abrirModal").on("click", function () {
+            $(".brand-logo").attr("class", "brand-logo center");
+            $(".fundoModal").toggleClass("abrir");
+        })
+        $(".abrirModalClose").on("click", function () {
+            $(".fundoModal").toggleClass("abrir");
+            $(".brand-logo").attr("class", "brand-logo");
+
+        })
+        $(".btnEditar").on("click", function () {
+            abrirFecharModalEdit();
+        })
+        function abrirFecharModalEdit() {
+            $(".modalCorpo1").toggleClass("abrirEdit");
+        }
+        function abrirEditar() {
+            $(".modalEditInfo").toggleClass("abrirEditInfo");
+        }
+        $(".btnCancelar").on("click", function () {
+            abrirFecharModalEdit();
+        })
+        $("#formEdition").submit(function () {
+            $.ajax({
+                url: "editCli.php",
+                type: "POST",
+                data: $("#formEdition").serialize(),
+                success: function (data) {
+                    if (data != "Informações atualizadas com sucesso") {
+                        swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: data,
+                        })
+                    }
+                    else {
+
+                        swal({
+                            type: 'success',
+                            title: 'OK',
+                            text: data,
+                            confirmButtonColor: '#f9a825',
+                            confirmButtonText: 'OK',
+                        })
+                        
+                        PegarInfo();
+                        $(".btnEditar").trigger("click");
+                        
+                    }
+                }
+            })
+            return false;
+        })
+        var imgAnterior = "";
+        var imgAnterior1 = "";
+        $('#file').change(function () {
+            imgAnterior = $(".imgPerfil").attr("src");
+            console.log(imgAnterior);
+            const file = $(this)[0].files[0];
+            const tipo = file.type;
+            const reader = new FileReader();
+            if (tipo != "image/jpeg" && tipo != "image/jpg" && tipo != "image/png") {
+                alert("ERRO!!\n Arquivo selecionado não é uma imagem \nTipos aceitos:Jpeg, Jpg, Png");
+                $('#file').reset;
+                $('#img').attr('src', '');
+            }
+            else {
+                reader.onloadend = function () {
+                    $("#image").remove();
+                    var div = $(".img");
+                    var img = $("<img/>");
+                    img.attr({
+                        id: "image",
+                        src: reader.result,
+                        height: '220px',
+                        width: '320px',
+                    })
+                    div.append(img);
+                    $(".imgPerfil").attr('src', reader.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        })
+        $('#file1').change(function () {
+            imgAnterior1 = $("#imgFundo").attr("src");
+            console.log(imgAnterior1);
+            const file = $(this)[0].files[0];
+            const tipo = file.type;
+            const reader = new FileReader();
+            if (tipo != "image/jpeg" && tipo != "image/jpg" && tipo != "image/png") {
+                alert("ERRO!!\n Arquivo selecionado não é uma imagem \nTipos aceitos:Jpeg, Jpg, Png");
+                $('#file').reset;
+                $('#img').attr('src', '');
+            }
+            else {
+                reader.onloadend = function () {
+                    $("#image").remove();
+                    var div = $(".img");
+                    var img = $("<img/>");
+                    img.attr({
+                        id: "image",
+                        src: reader.result,
+                        height: '220px',
+                        width: '320px',
+                    })
+                    div.append(img);
+                    $("#imgFundo").attr('src', reader.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        })
+        function cancelarImg() {
+            if (imgAnterior != "") {
+                $(".imgPerfil").attr("src", imgAnterior);
+            }
+            if (imgAnterior1 != "") {
+                $("#imgFundo").attr("src", imgAnterior1);
+            }
+        }
+        $(".formImgPerfil").submit(function () {
+            var file_data = $('#file').prop('files')[0];
+            var form_data = new FormData();
+            form_data.append('file', file_data);
+            $.ajax({
+                url: 'editImgPerfil.php', // point to server-side PHP script 
+                dataType: 'text',  // what to expect back from the PHP script, if anything
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function (data) {
+                    if (data == "Imagem alterada com sucesso") {
+                        swal({
+                            type: 'success',
+                            title: 'Ok',
+                            text: data,
+                        })
+                        $('#editImgPerfil.modal').modal({
+                            dismissible: true,
+                        });
+                        imgAnterior = "";
+                    }
+                    else {
+                        swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: data,
+                        })
+                    }
+                }
+
+            })
+            return false;
+        });
+        $(".formImgFundo").submit(function () {
+            var file_data = $('#file1').prop('files')[0];
+            var form_data = new FormData();
+            form_data.append('file', file_data);
+            $.ajax({
+                url: 'editImgFundo.php', // point to server-side PHP script 
+                dataType: 'text',  // what to expect back from the PHP script, if anything
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function (data) {
+                    if (data == "Imagem alterada com sucesso") {
+                        swal({
+                            type: 'success',
+                            title: 'Ok',
+                            text: data,
+                        })
+
+                        $('#editImgFundo.modal').modal({
+                            dismissible: true,
+                        });
+                        imgAnterior1 = "";
+                    }
+                    else {
+                        swal({
+                            type: 'error',
+                            title: 'Oops...',
+                            text: data,
+                        })
+                    }
+                }
+
+            })
+            return false;
+        });
+    </script>
+</body>
+
+</html>

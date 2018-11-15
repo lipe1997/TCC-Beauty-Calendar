@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Home</title>
+    <link rel="shortcut icon" href="Imagens/scissors-badge.png" type="image/x-icon">
+    <!--Importar o Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Importar o materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <!--Importar o style1.css-->
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<!--Colocando cor de fundo no body, pela class: grad-->
+<body>
+    <!--Título da página-->
+    <div class="parallax-container p1">
+        <!--#include virtual = "barra1.html"-->
+        <div class="parallax">
+            <img src="Imagens/img1.jpg" width="100%">
+        </div>
+        <div class="titulo1 center">
+
+            <h2 class="yellow-text text-darken-3"><i><b>Beauty Calendar</b></i></h2>
+            <h5 class="white-text">Tecnologia que vem para mudar o mundo da beleza.</h5>
+
+        </div>
+        <br><br>
+    </div>
+    <div class="section">
+
+        </div>
+        <div class="container row col l12 center grey-text text-darken-2">
+            <div class="col l4 " id="vantagens">
+                <div>
+                    <img class="circle vantagen center" src="Imagens/flash (1).png" width="100px" height="100px" alt="">
+                </div>
+                <h4 class="yellow-text text-darken-3">Agilidade</h4>
+                <h6>
+                    A Beauty Calendar possui agilidade e facilidade para gerenciar e divulgar seus
+                    serviços de beleza através de perfis facilmente administráveis, aumentando assim as
+                    proporções de clientes em busca de seus serviços de qualidade e gerando um impacto
+                    econômico positivo em seu negócio.
+                </h6>
+            </div>
+            <div class="col l4 ">
+                <div>
+                    <img class="circle vantagen center" src="Imagens/notification.png" width="100px" height="100px" alt="">
+                </div>
+                <h4 class="yellow-text text-darken-3">Notificações</h4>
+                <h6 class=" ">
+                    O sistema de agendamento de serviços de beleza da Beauty Calendar possui um
+                    sistema simples e fácil para a notificação de seus clientes, garantindo assim a
+                    confidencialidade e qualidade de serviço por partes de salões de beleza cadastrados
+                    em nossa plataforma.
+                </h6>
+            </div>
+            <div class="col l4 ">
+                <div>
+                    <img class="circle vantagen center" src="Imagens/ranking.png" width="100px" height="100px" alt="">
+                </div>
+                <h4 class="yellow-text text-darken-3">Ranking</h4>
+                <h6 class=" ">
+                    Além da agilidade que os clientes e salões de beleza possuem na plataforma, a
+                    Beauty Calendar possui um mecanismo onde salões de beleza conforme forem mais
+                    indicados e acessado terão seu sistema qualificado em ranking de relevância de
+                    serviços oferecidos para seus clientes.
+                </h6>
+            </div>
+        </div>
+    
+    <div class="parallax-container p2">
+        <div class="parallax">
+            <img src="Imagens/img2.jpg" width="100%">
+        </div>
+    </div>
+    <div class="section black" id="introducao">
+        <br><br>
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div id="Introducao" class="">
+                        <h3 class="yellow-text text-darken-3 center">Introdução</h3>
+                        <h5 class="grey-text text-darken-2 center container">
+                            'A beauty Calendar é um website desenvolvido para você, isso mesmo para VOCÊ profissional e
+                            cliente
+                            que busca qualidade, comodidade e facilidade tanto para promover seus serviços quanto para
+                            achar
+                            o salão ideal sem a necessidade de locomoção. Essa tecnologia vem para inovar o mercado da
+                            beleza.
+                            Aqui na Beauty Calendar sabemos o quão difícil é manter a administração dos seus
+                            serviços e a
+                            divulgação do mesmo, por isso utilizamos a tecnologia a seu favor, junte-se a nós e faça
+                            parte da tecnologia que vem para mudar o mundo!'
+                        </h5><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    
+    <div class="parallax-container p3">
+        <div class="parallax">
+            <img class="img-parallax2" src="Imagens/fundo5.jpg" width="100%">
+        </div>
+    </div>
+
+    <div class="black" id="sobre">
+        <br><br>
+        <div id="Quem somos" class="nos container">
+            <div class="section">
+                <div class="row">
+                    <h3 class="yellow-text text-darken-3 center">
+                        Quem somos?
+                    </h3>
+                    <h5 class="grey-text text-darken-2 center container">
+                        'A beauty Calendar é composta por um grupo de estudantes altamente qualificados em sua área
+                        de atuação. Estudantes que estão dispostos a enquadrar as plataformas online no quesito
+                        beleza, sendo assim agilizando e otimizando a vida de profissionais e clientes na busca
+                        pelo salão ideal e proporcionando experiências incríveis e únicas.'
+                    </h5><br>
+                </div>
+            </div><br><br>
+        </div><br><br>
+    </div>
+
+    <div class="parallax-container p3">
+        <div class="parallax">
+            <img class="img-parallax2" src="Imagens/img4.jpg" width="100%">
+        </div>
+    </div>
+
+    <!-- <div class="black">
+        <br><br>
+        <div class="nos container">
+            <div class="section">
+                <div class="row">
+                    <h5 class="grey-text text-darken-2 center container">
+                        Carrossel em breve..
+                    </h5><br>
+                </div>
+            </div><br><br>
+        </div><br><br>
+    </div> -->
+
+
+
+    <div class="foot" id="contatos">
+        <footer class="grad1 page-footer black">
+            <div class="container">
+                <div class="row">
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Redes Sociais</h5>
+                        <ul>
+                            <li>
+                                <img src="Imagens/icon facebook.png" alt="" width="50vw" height="50vh">
+
+                                <img src="Imagens/icon instagram.png" alt="" width="50vw" height="50vh">
+
+                                <img src="Imagens/icon twitter.png" alt="" width="50vw" height="50vh">
+
+                                <img src="Imagens/icon whatsapp.png" alt="" width="50vw" height="50vh">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">Fontes e imagens usadas</a><br>
+                    <a class="grey-text text-lighten-4 right" href="http://materializecss.com">materializecss</a><br>
+                    <a class="grey-text text-lighten-4 right" href="https://www.pexels.com/">pexels</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/loginC-S.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.parallax').parallax();
+            if ($(window).scrollTop() > 100) {
+                $(".navv").attr("class", "navbar-fixed");
+                $(".nav.container").attr("class", "nav1");
+                $(".nav1").css("background-color", "rgba(0, 0, 0, 0.267)");
+                $(".leveRadius").css("background-color", "rgba(0, 0,0, 0.267)");
+            }
+            $(window).scroll(function () {
+
+                if ($(window).scrollTop() > 100) {
+                    $(".navv").attr("class", "navbar-fixed");
+                    $(".nav.container").attr("class", "nav1");
+                    $(".nav1").css("background-color", "rgba(0, 0, 0, 0.267)");
+                    $(".leveRadius").css("background-color", "rgba(0, 0,0, 0.267)");
+                }
+                else {
+                    $(".navbar-fixed").attr("class", "navv navbar-fixed");
+                    $(".nav1").attr("class", "nav container");
+                    $(".nav.container").css("background-color", "rgba(0, 0, 0, 0.267)");
+                    $(".leveRadius").css("background-color", "rgba(0, 0, 0, 0.267)");
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

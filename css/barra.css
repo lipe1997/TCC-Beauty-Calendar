@@ -1,0 +1,89 @@
+#logo{
+    font-family: 'Times New Roman';
+}
+
+.nav{
+    position: relative;
+    top:15vh;
+    left:15vw;
+    border-radius: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.267);
+    transition: .5s;
+}
+.navv.navbar-fixed{
+    transition: .5s;
+}
+.leveRadius{
+    background-color: rgba(0, 0, 0, 0.267);
+}
+.retrato1{
+    background-image: url("../Imagens/fundo4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+.modal{
+    border-radius: 10px 10px;
+    background-color: #000000;
+    opacity:0.5;
+}
+#logo{
+    visibility: visible;
+}
+.descer{
+    position: relative;
+    top: 10vh;
+    background-color: rgba(0, 0, 0, 0.562);
+    width: 100%;
+    
+
+}
+.botao{
+    border: 2px inset #fdc303;
+    background-color: #000000;
+    color:#fdc303;
+    border-radius: 3px 3px;
+    width: 7vw;
+    height: 6vh;
+}
+.botao:hover{
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border-color: #ffffff;
+}
+.modal{
+    border: 3px inset #fdc303;
+}
+.text-purple{
+    color:#fdc303;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #fdc303!important;
+}
+/* label focus color */
+.input-field input[type=text] {
+    border-bottom: 1px solid #f9a825 !important;
+    box-shadow: 0 1px 0 0 #f9a825 !important;
+}
+/* label focus color */
+.input-field input[type=password] {
+    border-bottom: 1px solid #f9a825 !important;
+    box-shadow: 0 1px 0 0 #f9a825 !important;
+}
+/* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #fdc303 !important;
+    box-shadow: 0 1px 0 0 #fdc303 !important;
+  }
+  /* label underline focus color */
+  .input-field input[type=password]:focus {
+    border-bottom: 1px solid #fdc303 !important;
+    box-shadow: 0 1px 0 0 #fdc303 !important;
+  }
+
+  .material-icons.active {
+    color: #fdc303 !important;
+    }

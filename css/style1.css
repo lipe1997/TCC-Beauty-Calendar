@@ -1,0 +1,94 @@
+
+::-webkit-scrollbar-track{ 
+    background-color: rgb(0, 0, 0);
+    border-radius: 80px;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    background: #fdc303;
+    border-radius: 100px;
+}
+::-webkit-scrollbar-thumb{ 
+    background: #fdc303;
+    border-radius: 80px;
+}
+.borda{
+    border: 2px inset #000000;
+    border-radius: 10px;
+}
+.bordabtn{
+    border: none;
+    border-bottom: 2px solid #000000;
+}
+.SombraModal{
+    border: 10px inset #f9a825;
+}
+.grad{
+    background-image: linear-gradient(white, #fdc303, white);
+}
+.grad1{
+    background-image: linear-gradient(Black, #fdc303, black);
+}
+.letreiro{
+    position: relative;
+}
+/**/
+
+
+
+/*.intro{
+    border: 3px dotted #fffefecb;
+    border-radius: 10px;
+}*/
+.nos{
+    border: 3px dotted #050505d8;
+    border-radius: 10px;
+}
+
+.foot{
+    border-top:2px solid #fdc303;
+    border: 2px #fdc303;
+}
+/*modifica o tamanho do primeiro parallax*/
+.parallax-container.p1{
+    height:100vh;
+}
+/*modifica o tamanho do segundo parallax*/
+.parallax-container.p2{
+    height:80vh;
+}
+.parallax-container.p3{
+    height:80vh;
+}
+.titulo1{
+    position: relative;
+    top:30vh;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    border:3px solid #fdc303;
+    background-color: black;
+}
+.card1{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.card{
+    border:6px solid #600ab1;
+}
+.fieldset{
+    border:3px inset #fdfbfb;
+    border-radius: 10px;
+}
+strong{
+    color: black;
+    border: 2px solid #fdc303; 
+}
+.vantagen{
+    border:2px solid #fdc303;
+    width: 150px;
+    height: 150px;
+}
+.vantagen{
+    border:3px solid #ffffff;
+} 

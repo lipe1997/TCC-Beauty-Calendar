@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Home</title>
+  <link rel="shortcut icon" href="Imagens/scissors-badge.png" type="image/x-icon">
+  <!--Importar o Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Importar o materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+  <link rel="stylesheet" href="css/barra.css">
+  <style>
+    
+  </style>
+<body>
+  <!--Título da página-->
+  <ul id="dropdown1" class="leveRadius dropdown-content ">
+    <li class="h"><a href="#ModalCliente" class="white-text modal-trigger">Cliente</a></li>
+    <li class="divider yellow darken-3 " tabindex="-1"></li>
+    <li class="a"><a href="#ModalSalao" class="white-text modal-trigger">Salão</a></li>
+  </ul>
+  <div class="navv navbar-fixed">
+    <nav class="nav container">
+      <div class="nav-wrapper">
+        <a href="Home.shtml" class="brand-logo"><img src="Imagens/scissors-badge.png" width="80vw" height="60vh">
+          <span class="right yellow-text text-darken-3 " id="logo" style="margin-left:10px"></span>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#vantagens">Vantagens</a></li>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#contatos">Contatos</a></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-trigger" href="#" data-target="dropdown1">Entrar | Cadastrar-se<i class="material-icons left yellow-text text-darken-3">person</i></a></li>
+          </ul>
+      </div>
+    </nav>
+  </div>
+  <div id="ModalCliente" class="modal modal-fixed-footer black darken-3">
+    <form action="" class="formLoginCliente" method="POST">
+      <div class="retrato1 modal-content">
+        <div class="descer row l12 center">
+          <h4 class="yellow-text text-darken-3">Entrar</h4>
+          <div class="push-l3 col l6">
+            <div class="input-field">
+              <input type="text" class="yellow-text" name="usuario" id="user">
+              <label for="user" class="yellow-text text-darken-3">Usuário:</label>
+            </div>
+            <div class="input-field">
+              <input type="password" class="yellow-text" name="senha" id="senha">
+              <label for="senha" class="yellow-text text-darken-3">Senha:</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer black">
+        <input type="submit" class="btn yellow darken-3 white-text" value="Entrar">
+        <a href="formulario.shtml" class="waves-effect waves-white btn-flat yellow-text text-darken-3">Cadastrar-se</a>
+      </div>
+    </form>
+  </div>
+  <div id="ModalSalao" class="modal modal-fixed-footer black darken-3">
+    <form action="" class="formLoginSalao" method="POST">
+      <div class="retrato1 modal-content">
+        <div class="descer row l12 center">
+          <h4 class="yellow-text text-darken-3">Entrar</h4>
+          <div class="push-l3 col l6">
+            <div class="input-field">
+              <input type="text" class="yellow-text text-darken-3" name="usuario" id="user">
+              <label for="user">Usuário:</label>
+            </div>
+            <div class="input-field">
+              <input type="password" class="white-text" name="senha" id="senha">
+              <label for="senha">Senha:</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer black">
+        <input type="submit" class="btn yellow darken-3 white-text" value="Entrar">
+        <a href="formulario1.shtml" class="waves-effect waves-white btn-flat yellow-text text-darken-3">Cadastrar-se</a>
+      </div>
+    </form>
+  </div>
+
+
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+      $('.dropdown-trigger').dropdown({
+        hover: true,
+        coverTrigger: false,
+      });
+
+      $('.modal').modal();
+      if ($(window).scrollTop() > 100) {
+        $("#logo").text("Beauty Calendar");
+      }
+    });
+    $(window).scroll(function () {
+
+      if ($(window).scrollTop() > 100) {
+        $("#logo").text("Beauty Calendar");
+      }
+      else {
+        $("#logo").text("");
+
+      }
+    });
+  </script>
+</body>
+
+</html>

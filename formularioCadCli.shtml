@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <!--#include virtual = "barra1.html"-->
+    <!--#include virtual = "barraPaginaHome.html"-->
     <div class="row l12">
         <div id="test1" class="col l6 m12 s12 push-l3 ">
             <fieldset>

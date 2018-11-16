@@ -14,12 +14,10 @@
 
 <body>
     <div class="imgFundo ">
-
         <img src="./Imagens/fundo4.jpg" width="100%" height="100%" alt="">
         <div class="logoPefil">
             <img src="Imagens/boy.png" width="30%" alt="">
         </div>
-
     </div>
 
     <div class="infoSalao">
@@ -43,45 +41,134 @@
     <div class="section row yellow-text container">
         <div class="col s12 push-s2 ">
             <ul class="tabs black yellow-text">
-                <li class="tab col s3"><a href="#servicos" class="yellow-text">Serviços</a></li>
-                <li class="tab col s3"><a href="#galeria" class="yellow-text">Galeria</a></li>
+                <!-- <li class="tab col s3"><a href="#texto1" class="yellow-text">Serviços</a></li> -->
+                <li class="tab col s3 "><a href="#lala" class="yellow-text">Serviços</a></li>
+                <li class="tab col s3 "><a href="#galeria" class="yellow-text">Galeria</a></li>
                 <li class="tab col s3"><a href="#comentarios" class="yellow-text">Comentários</a></li>
             </ul>
         </div>
         <!-- Aba de serviços -->
-        <div id="servicos " class="col s12 ">
-            <div class="servicoExemplo ">
-                <img src="Imagens/corte.png" width="50%" height="" alt="">
-                <span id="nomeServico">Corte - Masculino</span>
-                <span id="preco">A PARTIR DE: $100,00</span>
-                <span id="msg" >Imagem meramente ilustrativa</span>
-                <button href="#!" class="btnAgendar">Agendar</button>
+        <div id="lala" class="col s12">
+            <div class="row col s12">
+                <div class="col 12s m4 l6">
+                    <div class="card horizontal">
+                        <img src="Imagens/salon.png" width="40%" height="160vh">
+                        <div class="card-stacked">
+                            <div class="card-content center black-text">
+                                <p>Corte Masculino</p>
+                                <p>A PARTIR DE - R$100,00</p>
+                            </div>
+                            <div class="card-action center">
+                                <button class="btnAgendar" href="">Agendar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col 12s m4 l6">
+                    <div class="card horizontal">
+                        <img src="Imagens//progressiva.png" width="40%" height="160vh">
+                        <div class="card-stacked">
+                            <div class="card-content center black-text">
+                                <p>Escova Progressiva</p>
+                                <p>A PARTIR DE - R$250,00</p>
+                            </div>
+                            <div class="card-action center">
+                                <button class="btnAgendar" href="">Agendar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col 12s m4 l6">
+                    <div class="card horizontal">
+                        <img src="Imagens/barba.png" width="40%" height="160vh">
+                        <div class="card-stacked">
+                            <div class="card-content center black-text">
+                                <p>Barba</p>
+                                <p>R$40,00</p>
+                            </div>
+                            <div class="card-action center">
+                                <button class="btnAgendar" href="">Agendar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Aba de galeria de fotos -->
         <div id="galeria" class="col s12">
-            
+            <div class="row col s12">
+                <div class="col l4 img">
+                    <a href="#modal1" class="modal-trigger">
+                        <img src="Imagens/imagem4.jpeg" alt="" width="350px" height="250px;">
+                    </a>
+                </div>
+                <div class="col l4 img push-l3">
+                    <a href="#modal1" class="modal-trigger">
+                        <img src="Imagens/imagem6.jpeg" alt="" width="350px" height="250px;">
+                    </a>
+                </div>
+            </div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <div class="imgModal">
+                        <img id="gear" src="" height="450vh">
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- Aba de comentarios-->
         <div id="comentarios" class="col s12">
-            
+            <div class="row col l12">
+                <form class="col s6 white">
+                    <div class="input-field">
+                        <textarea id="coment" class="materialize-textarea " maxlength="300"></textarea>
+                        <label for="coment">Comentário</label>
+                        <span id="lenght">(0/300)</span>
+                    </div>
+                    
+                </form>
+            </div>
 
         </div>
-    
+
     </div>
+    <!-- Modal Structure -->
+
 
     <script src="js/jquery.js"></script>
     <script src="js/materialize.js"></script>
+    <script src="js/jquery.mlens-1.7.min.js"></script>
     <script>
         $(document).ready(function () {
+            $(".img img").on("click", function () {
+
+
+                $("#gear").attr("src", $(this).attr("src"));
+                $("#gear").mlens(
+                    {
+                        lensShape: "square",                // shape of the lens (circle/square)
+                        lensSize: ["40%", "30%"],            // lens dimensions (in px or in % with respect to image dimensions)
+                        // can be different for X and Y dimension
+                        borderSize: 4,                  // size of the lens border (in px)
+                        borderColor: "#fdc303",            // color of the lens border (#hex)
+                        borderRadius: 3,                // border radius (optional, only if the shape is square)
+                        zoomLevel: 1,          // zoom level multiplicator (number)
+                        responsive: true       // true if mlens has to be responsive (boolean)
+                    });
+            })
+            $('.modal').modal();
             $('.tabs').tabs();
-        });
-        var src = $(".favorito img").attr("src")
+        })
         $(".favorito img").mouseenter(function () {
-                $(".favorito img").attr("src", "Imagens/coracao1.png")
+            $(".favorito img").attr("src", "Imagens/coracao1.png")
         })
         $(".favorito img").mouseleave(function () {
-                $(".favorito img").attr("src", "Imagens/coracao.png")
+            $(".favorito img").attr("src", "Imagens/coracao.png")
+        })
+        var lala = 0;
+        $("#coment").keydown(function () {
+            lala = $("#coment").val().length;
+            $("span#lenght").text(lala+" / 300");
         })
     </script>
 </body>

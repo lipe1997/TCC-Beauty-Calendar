@@ -75,53 +75,33 @@ span#descricao{
 p{
     font-size: 110%;
 }
-.servicoExemplo{
-    position: relative;
-    top: 20px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    width: 40%;
-    height: 60vh;
-    color: black;
-    font-size: 120%;
-}
-.servicoExemplo span{
-    color:black;
-}
-.servicoExemplo img{
-    position:absolute;
-    left: 25%;
-}
-#nomeServico{
-    top:50%;
-    left:25%;
-    font-size: 150%;
-}
-#preco{
-    top:65%;
-    left: 25%;
-}
-
-#msg{
-    top: 75%;
-    left:15%;
-    color:red;
-}
 .btnAgendar{
-
-    padding: 3%;
-    border:none;
-    border-radius: 5px;
-    background: #fdc303;
-    color:rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 10px;
     font-size: 120%;
-    position:absolute;
-    top:85%;
-    left:35%;
+    border-radius: 5px;
+    border: none;
+    background: #fdc303;
+    color: #ffffff;
 }
 .btnAgendar:hover{
-    cursor: pointer;
-    border:2px solid #fdc303;
-    color: #fdc303;
-    background:#ffffff;
+    border:3px solid #fdc303;
+    background: #ffffff;
+    color:#fdc303;
+}
+.modal{
+    width: 60% !important;
+    height: 80vh !important;
+    overflow: hidden;
+}
+.imgModal{
+    position: relative;
+    left:15%;
+    width: 70%;
+}
+span#lenght{
+    position: relative;
+    color: black;
+    left: 87%;
+    bottom:0;
 }

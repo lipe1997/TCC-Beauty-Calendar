@@ -44,6 +44,7 @@ $('.formularioSalao').submit(function (e) {
 
         },
         ifInvalid: function (input) {
+			console.log("aquii");
             swal({
                 type: 'error',
                 title: 'Oopss',

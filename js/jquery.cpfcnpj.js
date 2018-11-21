@@ -69,10 +69,6 @@
                                     valid = true;
                                     type = 'cpf';
                                 }
-                                else if (validate_cnpj(value, settings.mask)) {
-                                    valid = true;
-                                    type = 'cnpj';
-                                }
                             }
                         }
 
@@ -92,6 +88,74 @@
                 });
         });
     }
+
+    function validate_cnpj(val, msk) {
+        msk = msk != undefined && msk;
+        var regex = msk ? /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/ : /^[0-9]{14}$/;
+        var match = val.match(regex);
+        if (match != null) {
+            var val1 = "";
+            var val2 = "";
+            var val3 = "";
+            var val4 = "";
+            var val5 = "";
+
+            if (msk) {
+                val1 = match[0];
+                val2 = match[1]
+                val3 = match[2]
+                val4 = match[3];
+                val5 = match[4];
+            }
+            else {
+                val1 = val.substring(0, 2);
+                val2 = val.substring(2, 5);
+                val3 = val.substring(5, 8);
+                val4 = val.substring(8, 12);
+                val5 = val.substring(12, 14);
+            }
+
+            var i;
+            var number;
+            var result = true;
+
+            number = (val1 + val2 + val3 + val4 + val5);
+
+            s = number;
+
+            c = s.substr(0, 12);
+            var dv = s.substr(12, 2);
+            var d1 = 0;
+
+            for (i = 0; i < 12; i++)
+                d1 += c.charAt(11 - i) * (2 + (i % 8));
+
+            if (d1 == 0)
+                result = false;
+
+            d1 = 11 - (d1 % 11);
+
+            if (d1 > 9) d1 = 0;
+
+            if (dv.charAt(0) != d1)
+                result = false;
+
+            d1 *= 2;
+            for (i = 0; i < 12; i++) {
+                d1 += c.charAt(11 - i) * (2 + ((i + 1) % 8));
+            }
+
+            d1 = 11 - (d1 % 11);
+            if (d1 > 9) d1 = 0;
+
+            if (dv.charAt(1) != d1)
+                result = false;
+
+            return result;
+        }
+        return false;
+    }
+
     function validate_cpf(val, msk) {
         var regex = msk != undefined && msk ? /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/ : /^[0-9]{11}$/;
 

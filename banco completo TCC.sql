@@ -8,7 +8,6 @@ use beauty_calendar;
 
 create table tb_servico (
 preco varchar(8),
-tipo varchar(15),
 descricao varchar(60),
 id_servico int auto_increment primary key,
 foto varchar(80),
@@ -85,7 +84,6 @@ foreign key(id_profissional) references tb_profissional (id_profissional)
 create table tb_disponibilidade (
 dia date not null,
 hora varchar(5) not null,
-disponivel varchar(1) not null default'D',
 id_disponibilidade int auto_increment primary key,
 ocupado varchar(1)
 );
@@ -100,7 +98,7 @@ cpf varchar(14) not null,
 foto varchar(80) not null,
 telefone varchar(14),
 sexo varchar(1) not null,
-imgFundo varchar(80) not null,
+imgFundo varchar(80) not null default'Imagens/gota.jpg',
 id_endereco int not null,
 id_loginC int not null,
 foreign key(id_endereco) references tb_endereco (id_endereco)
@@ -165,7 +163,8 @@ alter table tb_agenda add foreign key(id_cliente) references tb_cliente (id_clie
 alter table tb_cliente add foreign key(id_loginC) references tb_loginC (id_login_cliente);
 alter table tb_salao add foreign key(id_loginS) references tb_loginS (id_login_salao);
 
-select * from tb_cliente;
+select * from tb_servico;
+select * from tb_atendimento;
 
 insert into tb_endereco(bairro,uf,cidade,logradouro,numero,complemento) 
 values('jd maria beatriz','SP','CARAPICUIBA','EST EGILIO VITORELLO','132','AP 53 C');
@@ -173,9 +172,9 @@ values('jd maria beatriz','SP','CARAPICUIBA','EST EGILIO VITORELLO','132','AP 53
 insert into tb_loginC(usuario,senha) values('Filipe','123');
 
 insert into tb_cliente(nome,celular,cpf,foto,sexo,imgFundo,id_endereco,id_loginC)
-values('Filipe','(11) 94835-7012','464.471.848-36','img/boy.jpg','M','img/fundo.jpg',1,1);
+values('Filipe','(11) 94835-7012','464.471.848-36','Imagens/boy.png','M','Imagens/gota.jpg',1,1);
 
-SELECT s.nome, s.img,e.cidade,s.id_salao from tb_salao s 
+/*SELECT s.nome, s.img,e.cidade,s.id_salao from tb_salao s 
             inner join tb_endereco e on s.id_endereco = e.id_endereco
             where e.cidade = 'CITY';
             select * from tb_cliente;
@@ -187,6 +186,35 @@ SELECT s.nome, s.img,e.cidade,s.id_salao from tb_salao s
  	where cli.id_cliente = 1;
     
     
-    update tb_cliente set nome = 'FLP', celular = '(11) 95647-4521', cpf = '123.456.222-33' where id_cliente = 1;
+    update tb_cliente set nome = 'Filipe', celular = '(11) 95647-4521', cpf = '123.456.222-33' where id_cliente = 1;*/
     
+    insert into tb_profissional(nome,descricao,foto,telefone) values('Filipe','cabelereiro','Imagens/corte.png','11 94835-7012');
     
+    insert into tb_servico(preco,descricao,foto,duracao,id_profissional,nome) values('R$120,00','corte masculino','Imagens/corte.png','00:50',1,'Corte + Barba');
+    
+    insert into tb_atendimento(dia,horario_inicio,horario_final,id_profissional) values (2,'13:00','20:00',1);
+    
+    insert into tb_disponibilidade (dia,hora,ocupado) values('2018-11-18','14:00','s');
+    
+    SELECT dia from
+         tb_atendimento where id_profissional = 1;
+         
+         SELECT aten.horario_inicio, aten.horario_final, serv.duracao 
+            from tb_atendimento aten inner join tb_servico serv on 
+            aten.id_profissional = serv.id_profissional inner join tb_profissional pro
+            where pro.id_profissional = 1 and aten.dia = 1 and serv.id_servico = 1;
+            
+            
+SELECT agen.horario,serv.duracao,aten.horario_inicio,aten.horario_final
+from tb_agenda agen inner join tb_servico serv on agen.id_profissional = serv.id_profissional 
+inner join tb_atendimento aten on agen.id_profissional = aten.id_profissional
+where agen.id_profissional = 1 and agen.dia = '2018-11-20';
+
+select * from tb_agenda;
+
+select * from tb_servico;
+
+insert into tb_agenda(dia,horario,status,id_cliente,id_profissional) values('2018-11-20','13:00','a',1,1);
+
+SELECT horario from tb_agenda where dia = '2018-11-20' and id_profissional = 1;
+         

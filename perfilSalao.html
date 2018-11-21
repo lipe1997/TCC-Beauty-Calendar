@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.css" />
     <link rel="stylesheet" href="css/perfilSalao.css">
+    <link rel="stylesheet" href="css/agendamentoModal.css">
 
 </head>
 
@@ -49,8 +50,34 @@
         </div>
         <!-- Aba de serviços -->
         <div id="lala" class="col s12">
+            <!-- Modal de agendamento -->
+            <div id="agendamento" class="modal modal-fixed-footer black">
+                <div class="modal-content">
+                    <h4 class="center">Agendamento</h4> <span class="notify">(Selecione o dia que deseja e os horarios
+                        apareceram)</span>
+                    <form action="" method="post" class="formAgenda">
+                        <div class="section"></div>
+                        <div class="row col l12">
+                            <div class="col l6">
+                                <img class="responsive-img" id="imgCalendario" width="25%" src="Imagens/calendar.png">
+                                <span class="alinhar"> <input type="text" name="dia" class="datepicker"></span>
+                            </div>
+                            <div class="col l6">
+                                <h6>Horarios dísponiveis </h6>
+                                <div class="select">
+                                    <!-- Select do banco -->
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer black">
+                    <input type="submit" value="Agendar" class="btn yellow darken-3 white-text right">
+                    <a href="#!" class="modal-close btn yellow-text text-darken-3 black left">Cancelar</a>
+                </div>
+                </form>
+            </div>
             <div class="row col s12">
-                <div class="col 12s m4 l6">
+                <div class="col 12s m6 l6">
                     <div class="card horizontal">
                         <img src="Imagens/salon.png" width="40%" height="160vh">
                         <div class="card-stacked">
@@ -59,12 +86,12 @@
                                 <p>A PARTIR DE - R$100,00</p>
                             </div>
                             <div class="card-action center">
-                                <button class="btnAgendar" href="">Agendar</button>
+                                <a class="modal-trigger btn yellow darken-3 white-text" href="#agendamento">Agendar</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col 12s m4 l6">
+                <div class="col 12s m6 l6">
                     <div class="card horizontal">
                         <img src="Imagens//progressiva.png" width="40%" height="160vh">
                         <div class="card-stacked">
@@ -73,12 +100,12 @@
                                 <p>A PARTIR DE - R$250,00</p>
                             </div>
                             <div class="card-action center">
-                                <button class="btnAgendar" href="">Agendar</button>
+                                <a class="modal-trigger btn yellow darken-3 white-text" href="#agendamento">Agendar</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col 12s m4 l6">
+                <div class="col 12s m6 l6">
                     <div class="card horizontal">
                         <img src="Imagens/barba.png" width="40%" height="160vh">
                         <div class="card-stacked">
@@ -87,7 +114,7 @@
                                 <p>R$40,00</p>
                             </div>
                             <div class="card-action center">
-                                <button class="btnAgendar" href="">Agendar</button>
+                                <a class="modal-trigger btn yellow darken-3 white-text" href="#agendamento">Agendar</a>
                             </div>
                         </div>
                     </div>
@@ -117,32 +144,97 @@
             </div>
         </div>
         <!-- Aba de comentarios-->
-        <div id="comentarios" class="col s12">
+        <div id="comentarios" class="col s12 white">
             <div class="row col l12">
                 <form class="col s6 white">
                     <div class="input-field">
                         <textarea id="coment" class="materialize-textarea " maxlength="300"></textarea>
                         <label for="coment">Comentário</label>
                         <span id="lenght">(0/300)</span>
+                        <a href="" class="btn left yellow darken-3 white-text">Comentar</a>
                     </div>
-                    
                 </form>
+                <div class="section yellow-text text-darken-3"></div>
+                <div class="row col l12">
+                    <ul class="collection col l6 m6 s12">
+                        <li class="collection-item avatar black-text">
+                            <img src="Imagens/imagem3.jpeg" alt="" class="circle">
+                            <span class="title black-text">Paula H. Campos</span>
+                            <p><br>
+                                Gostei muito dos serviços desse salão.
+                            </p>
+                            <a href="#!" class="secondary-content"><i class="material-icons yellow-text text-darken-3">close</i></a>
+                        </li>
+                    </ul>
+
+                </div>
             </div>
 
         </div>
 
     </div>
-    <!-- Modal Structure -->
-
-
     <script src="js/jquery.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/jquery.mlens-1.7.min.js"></script>
+    <script src="js/agendamento.js"></script>
     <script>
         $(document).ready(function () {
+            var array = Array();
+            
+            $("#imgCalendario").on("click", function () {
+                $(".datepicker").trigger("click");
+            });
+            $.ajax({
+                url: "diasTrabalhoCalendario.php",
+                type: "POST",
+                dataType: 'json',
+                success: function (data) {
+                    $('.datepicker').datepicker({
+                        i18n: {
+                            months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                            monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                            weekdays: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
+                            weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+                            weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+                            today: 'Hoje',
+                            clear: 'Limpar',
+                            cancel: 'Sair',
+                            done: 'Confirmar',
+                            labelMonthNext: 'Próximo mês',
+                            labelMonthPrev: 'Mês anterior',
+                            labelMonthSelect: 'Selecione um mês',
+                            labelYearSelect: 'Selecione um ano',
+                            selectMonths: true,
+                            selectYears: 15,
+                        },
+                        format: 'dd ,mmmm, yyyy',
+                        container: 'body',
+                        showClearBtn: true,
+                        minDate: new Date(),
+                        disableDayFn: function (date) {
+                            switch (date.getDay()) {
+                                case data["domingo"]:
+                                case data["segunda"]:
+                                case data["terca"]:
+                                case data["quarta"]:
+                                case data["quinta"]:
+                                case data["sexta"]:
+                                case data["sabado"]:
+                                    return false;
+                                default:
+                                    return true;
+
+                            }
+                        },
+                        onClose: function () {
+                            hr($(".datepicker").val());
+                        }
+                    })
+
+                }
+
+            })
             $(".img img").on("click", function () {
-
-
                 $("#gear").attr("src", $(this).attr("src"));
                 $("#gear").mlens(
                     {
@@ -158,6 +250,9 @@
             })
             $('.modal').modal();
             $('.tabs').tabs();
+            $(".btnAgendar").on("click",function(){
+                $("a .teste.modal-trigger").trigger('click');
+            });
         })
         $(".favorito img").mouseenter(function () {
             $(".favorito img").attr("src", "Imagens/coracao1.png")
@@ -168,7 +263,7 @@
         var lala = 0;
         $("#coment").keydown(function () {
             lala = $("#coment").val().length;
-            $("span#lenght").text(lala+" / 300");
+            $("span#lenght").text("(" + lala + "/300)");
         })
     </script>
 </body>

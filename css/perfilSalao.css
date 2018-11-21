@@ -41,7 +41,7 @@ div.infoSalao{
     border-top: none;
     border-radius: 10px;
 }
-span{
+.infoSalao span{
     position: absolute;
     top:10%;
     font-size: 120%;
@@ -84,11 +84,6 @@ p{
     background: #fdc303;
     color: #ffffff;
 }
-.btnAgendar:hover{
-    border:3px solid #fdc303;
-    background: #ffffff;
-    color:#fdc303;
-}
 .modal{
     width: 60% !important;
     height: 80vh !important;
@@ -100,8 +95,20 @@ p{
     width: 70%;
 }
 span#lenght{
-    position: relative;
+    position: absolute;
     color: black;
-    left: 87%;
-    bottom:0;
+    left: 85%;
+    top:-10px;
 }
+/* label focus color */
+.input-field textarea:focus + label {
+    color: #fdc303!important;
+  }
+  /* label focus color */
+  .input-field textarea {
+    border-bottom: 1px solid #f9a825 !important;
+    box-shadow: 0 1px 0 0 #f9a825 !important;
+  }
+  .card{
+      border-radius: 10px;
+  }

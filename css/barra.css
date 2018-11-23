@@ -2,6 +2,16 @@
     font-family: 'Times New Roman';
 }
 
+#texto{
+    color: #ffffff;
+    
+}
+
+#texto:focus{
+    border: solid 2px #fff;
+    border-radius: 2%
+}
+
 .nav{
     position: relative;
     top:15vh;

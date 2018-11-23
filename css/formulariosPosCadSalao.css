@@ -1,0 +1,55 @@
+*{padding: 0;margin: 0;}
+.input-field input[type=text]{
+    color:#f9a825;
+}
+.input-field input[type=file]{
+    color:#f9a825;
+}
+.input-field input[type=text]  {
+    border-bottom: 1px solid #f9a825 !important;
+    box-shadow: 0 1px 0 0 #f9a825 !important;
+}
+/* label underline focus color */
+  .input-field input[type=text]:focus  {
+    border-bottom: 1px solid #fdc303 !important;
+    box-shadow: 0 1px 0 0 #fdc303 !important;
+  }
+.input-field label{
+    color: #fdc303 !important;
+}
+/* label underline focus color */
+.material-icons.active {
+    color: #fdc303 !important;
+}
+#progress{
+    overflow: hidden;
+    counter-reset: step;
+}
+#progress li{
+    list-style-type: none;
+    color:#f9a825;
+    font-weight: bold;
+    text-transform: uppercase;
+    float: left;
+    background: black;
+    width: 33.33%;
+    margin-left: 0%;
+}
+#progress li :first-of-type{
+    margin-left: 0;
+}
+#progress li::before{
+    content:counter(step);
+    counter-increment: step;
+    width: 20px;
+    display: block;
+    line-height: 20px;
+    background: white;
+    color: #f9a825;
+    border-radius: 10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    margin:0 auto 10px auto;
+    text-align: center;
+
+}

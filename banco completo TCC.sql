@@ -196,7 +196,13 @@ values('Filipe','(11) 94835-7012','464.471.848-36','Imagens/boy.png','M','Imagen
     
     insert into tb_disponibilidade (dia,hora,ocupado) values('2018-11-18','14:00','s');
     
-    SELECT dia from
+    insert into tb_agenda(dia,horario,status,id_cliente,id_profissional) values('2018-11-20','13:00','a',1,1);
+    
+    insert into tb_loginS(usuario,senha)values('style','123');
+    
+    insert into tb_salao(nome,cpf,email,celular,img,id_endereco,id_loginS)values('Style Hair','464.471.848-36','filipe.guice@gmail.com','(11) 94835-7012','Imagens/boy.png',1,1);
+    
+ /*   SELECT dia from
          tb_atendimento where id_profissional = 1;
          
          SELECT aten.horario_inicio, aten.horario_final, serv.duracao 
@@ -209,12 +215,13 @@ SELECT agen.horario,serv.duracao,aten.horario_inicio,aten.horario_final
 from tb_agenda agen inner join tb_servico serv on agen.id_profissional = serv.id_profissional 
 inner join tb_atendimento aten on agen.id_profissional = aten.id_profissional
 where agen.id_profissional = 1 and agen.dia = '2018-11-20';
-
+*/
 select * from tb_agenda;
 
-select * from tb_servico;
-
-insert into tb_agenda(dia,horario,status,id_cliente,id_profissional) values('2018-11-20','13:00','a',1,1);
+select * from tb_salao;
 
 SELECT horario from tb_agenda where dia = '2018-11-20' and id_profissional = 1;
-         
+
+insert into tb_salao_profissional(id_salao,id_profissional)value(1,1);
+
+SELECT * from tb_salao_profissional where id_salao = 1 limit 1;

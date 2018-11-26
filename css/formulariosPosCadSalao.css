@@ -21,35 +21,48 @@
 .material-icons.active {
     color: #fdc303 !important;
 }
-#progress{
-    overflow: hidden;
-    counter-reset: step;
-}
-#progress li{
-    list-style-type: none;
-    color:#f9a825;
-    font-weight: bold;
-    text-transform: uppercase;
-    float: left;
-    background: black;
-    width: 33.33%;
-    margin-left: 0%;
-}
-#progress li :first-of-type{
-    margin-left: 0;
-}
-#progress li::before{
-    content:counter(step);
-    counter-increment: step;
+.numeros div{
+    background: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
     width: 20px;
-    display: block;
-    line-height: 20px;
-    background: white;
-    color: #f9a825;
     border-radius: 10px;
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
-    margin:0 auto 10px auto;
+    float: left;
     text-align: center;
-
+    margin-left:46.6%;
+    margin-bottom: 10px;
+    position:relative;
+}
+.numeros div#primeira{
+    margin: 0%;
+}
+.progress{
+    position:absolute;
+    top:1.5%;
+    z-index: -1;
+}
+.numeros div.ativo{
+    background: #fdc303;
+    color: rgb(255, 255, 255);
+}
+.form1{
+    display:block;
+}
+.form2{
+    display:none;
+}
+.form3{
+    display:none;
+}
+.nomes span{
+    margin-left: 17%;
+    position: relative;
+    top:-10px;
+    text-transform: uppercase;
+    
+}
+.nomes span:first-of-type{
+    margin-left: 9.5%;
+}
+.nomes span:last-of-type{
+    margin-left: 17%;
 }

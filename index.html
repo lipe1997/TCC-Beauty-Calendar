@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/materialize.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="datepicker">
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/agendamento1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "diasTrabalhoCalendario.php",
+                type: "POST",
+                dataType: 'json',
+                success: function (data) {
+                    $('.datepicker').datepicker({
+                        i18n: {
+                            months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+                            monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+                            weekdays: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabádo'],
+                            weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+                            weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+                            today: 'Hoje',
+                            clear: 'Limpar',
+                            cancel: 'Sair',
+                            done: 'Confirmar',
+                            labelMonthNext: 'Próximo mês',
+                            labelMonthPrev: 'Mês anterior',
+                            labelMonthSelect: 'Selecione um mês',
+                            labelYearSelect: 'Selecione um ano',
+                            selectMonths: true,
+                            selectYears: 15,
+                        },
+                        format: 'dd ,mmmm, yyyy',
+                        container: 'body',
+                        showClearBtn: true,
+                        minDate: new Date(),
+                        disableDayFn: function (date) {
+                            switch (date.getDay()) {
+                                case data["domingo"]:
+                                case data["segunda"]:
+                                case data["terca"]:
+                                case data["quarta"]:
+                                case data["quinta"]:
+                                case data["sexta"]:
+                                case data["sabado"]:
+                                    return false;
+                                default:
+                                    return true;
+
+                            }
+                        },
+                        onClose: function () {
+                            hr($(".datepicker").val());
+                        }
+                    })
+                }
+
+            })
+        });
+
+    </script>
+</body>
+
+</html>

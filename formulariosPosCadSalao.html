@@ -12,16 +12,24 @@
 </head>
 
 <body>
-
-    <fieldset class="container center black">
-        <div id="progress">
-            <ul>
-                <li>Cadastro Profissinal</li>
-                <li>Horarios e dias trabalhados</li>
-                <li>Serviços oferecidos</li>
-            </ul>
+    <div class="container">
+        <div class="numeros">
+            <div class="ativo" id="primeira">1</div>
+            <div id="segunda">2</div>
+            <div id="terceira">3</div>
         </div>
-        <form action="" method="POST" enctype="multipart/form-data">
+
+        <div class="progress black container">
+
+        </div>
+    </div>
+    <div class="nomes">
+        <span> Cadastro de profissionais</span>
+        <span> Horarios dos profissionais</span>
+        <span> Cadastro de serviços</span>
+    </div>
+    <fieldset class="container center black">
+        <form action="valiProfissao.php" class="form1" method="POST" enctype="multipart/form-data">
             <div class="input-field col s12 l6">
                 <input type="text" name="nome" id="Nome">
                 <label for="Nome">Nome</label>
@@ -46,11 +54,53 @@
             </div>
             <div id="preview"></div>
             <input type="submit" value="Cadastrar" class="btn yellow darken-3 text-black left">
-            <input type="submit" value="Próximo" class="btn text-yellow text-darken-3 black right">
+            <a class="waves-effect waves-light btn text-yellow text-darken-3 black right" id="prox">Próximo</a>
+        </form>
+        <form class="form2" method="POST" action="valiHorarios.php">
+            <div class="input-field col s12 l6">
+                <input type="text" id="primer_nombre" class="validate">
+                <label for="primer_nombre">Primer Nombre</label>
+            </div>
+            <div class="input-field col s12 l6">
+                <input type="text" id="segundo_nombre" class="validate">
+                <label for="segundo_nombre">Segundo Nombre</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="email" id="email" class="validate">
+                <label for="email" data-error="Correo Inválido" data-success="Correcto">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="mensaje" class="materialize-textarea"></textarea>
+                <label for="mensaje">Mensaje</label>
+            </div>
+            <input type="submit" value="Cadastrar" class="btn yellow darken-3 text-black left">
+            <a class="waves-effect waves-light btn text-yellow text-darken-3 black right" id="prox1">Próximo</a>
+            <a class="waves-effect waves-light btn blue white-text" id="anterior">Anterior</a>
+        </form>
+        <form class="form3" method="POST" action="valiServicos.php">
+            <div class="input-field col s12 l6">
+                <input type="text" id="primer_nombre" class="validate">
+                <label for="primer_nombre">Primer Nombre</label>
+            </div>
+            <div class="input-field col s12 l6">
+                <input type="text" id="segundo_nombre" class="validate">
+                <label for="segundo_nombre">Segundo Nombre</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="email" id="email" class="validate">
+                <label for="email" data-error="Correo Inválido" data-success="Correcto">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="mensaje" class="materialize-textarea"></textarea>
+                <label for="mensaje">Mensaje</label>
+            </div>
+            <input type="submit" value="Cadastrar" class="btn yellow darken-3 text-black left">
+            <a class="waves-effect waves-light btn blue white-text" id="anterior1">Anterior</a>
         </form>
     </fieldset>
     <script src="js/jquery.js"></script>
     <script src="js/materialize.js"></script>
+    <script src="js/formulariosPassos.js"></script>
     <script>
         function caminhoImagem(input) {
 

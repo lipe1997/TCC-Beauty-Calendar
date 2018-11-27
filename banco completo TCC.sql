@@ -190,7 +190,7 @@ values('Filipe','(11) 94835-7012','464.471.848-36','Imagens/boy.png','M','Imagen
     
     insert into tb_profissional(nome,descricao,foto,telefone) values('Filipe','cabelereiro','Imagens/corte.png','11 94835-7012');
     
-    insert into tb_servico(preco,descricao,foto,duracao,id_profissional,nome) values('R$120,00','corte masculino','Imagens/corte.png','00:50',1,'Corte + Barba');
+    insert into tb_servico(preco,descricao,foto,duracao,id_profissional,nome) values('R$120,00','corte masculino','Imagens/corte.png','01:30',1,'Corte + Barba');
     
     insert into tb_atendimento(dia,horario_inicio,horario_final,id_profissional) values (2,'13:00','20:00',1);
     
@@ -216,12 +216,30 @@ from tb_agenda agen inner join tb_servico serv on agen.id_profissional = serv.id
 inner join tb_atendimento aten on agen.id_profissional = aten.id_profissional
 where agen.id_profissional = 1 and agen.dia = '2018-11-20';
 */
-select * from tb_agenda;
+select * from tb_atendimento;
 
-select * from tb_salao;
+select * from tb_agenda;
 
 SELECT horario from tb_agenda where dia = '2018-11-20' and id_profissional = 1;
 
 insert into tb_salao_profissional(id_salao,id_profissional)value(1,1);
 
 SELECT * from tb_salao_profissional where id_salao = 1 limit 1;
+
+SELECT aten.horario_inicio, aten.horario_final, agen.horario,ser.duracao
+            from tb_atendimento aten inner join tb_agenda agen on 
+            agen.id_profissional = aten.id_profissional
+            inner join tb_servico ser on ser.id_profissional = aten.id_profissional
+             where aten.id_profissional = 1 and aten.dia = 2 and agen.dia = '2018-11-20';
+             SELECT *from tb_agenda where dia = '2018-11-20' and id_profissional = 1;
+             
+             SELECT aten.horario_inicio,aten.horario_final,serv.duracao 
+            from tb_atendimento aten inner join tb_servico serv on 
+            serv.id_profissional = aten.id_profissional where serv.id_servico = 1
+            and aten.id_profissional = 1 and aten.dia = 2;
+SELECT agen.horario,aten.horario_inicio,aten.horario_final,serv.duracao
+from tb_agenda agen inner join tb_atendimento aten on agen.id_profissional = aten.id_profissional
+inner join tb_servico serv on serv.id_profissional = aten.id_profissional 
+where aten.dia = 2 and agen.dia = '2018-11-20' and agen.id_profissional = 1;
+
+insert into tb_agenda(dia,horario,status,id_cliente,id_profissional) values('2018-11-27','14:40','a',1,1);

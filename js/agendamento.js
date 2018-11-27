@@ -21,7 +21,6 @@ function hr(selecionado) {
             dataType: 'json',
             data: { selecionado: selecionado },
             success: function (dados) {
-
                 var initialHora = new Date(1900, 0, 1, dados["inicio"].split(":")[0], dados["inicio"].split(":")[1]);
                 var finalHora = new Date(1900, 0, 1, dados["fim"].split(":")[0], dados["fim"].split(":")[1]);
                 var duracao = new Date(1900, 0, 1, dados["duracao"].split(":")[0], dados["duracao"].split(":")[1]);

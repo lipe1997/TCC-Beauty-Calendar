@@ -13,9 +13,8 @@
   <!--Importar o materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
   <link rel="stylesheet" href="css/barra.css">
-  <style>
-    
-  </style>
+  <script src='js/jquery.js'></script>
+  
 <body>
   <!--Título da página-->
   <ul id="dropdown1" class="leveRadius dropdown-content ">
@@ -31,8 +30,8 @@
           <ul class="right hide-on-med-and-down">
             <!--adiciona uma barra de pesquisa -->
             <li><a><form class="pesquisa">
-                    <input type="search" id="texto"  list="historico" placeholder="Pesquisar">
-                    <img src="Imagens/lupa.png" class="btn">
+                   <div id="divpesquisa"> <input type="search" id="texto"  list="historico" placeholder="Pesquisar">
+                    <img src="Imagens/lupa.png"  class="btn" id="botao" type ="button" > </div>
 
                     <datalist id="historico">
                          <option value="Teste"></option>
@@ -41,6 +40,19 @@
                          <option value="Unha"></option>
                     </datalist>
             </form></a></li>
+            <script>
+                 
+                    $('#botao').hide(1)
+
+                    $('#divpesquisa').mouseenter(function(){
+                      $('#botao').show(1);
+                      $('#divpesquisa').mouseleave(function(){
+                        $('#botao').hide(1)
+                      })
+                    })
+      
+
+            </script>
             <li><a href="#vantagens">Vantagens</a></li>
             <li><a href="#introducao">Introdução</a></li>
             <li><a href="#sobre">Sobre nós</a></li>

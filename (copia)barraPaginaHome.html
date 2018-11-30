@@ -29,20 +29,41 @@
           <span class="right yellow-text text-darken-3 " id="logo" style="margin-left:10px"></span>
           <ul class="right hide-on-med-and-down">
             <!--adiciona uma barra de pesquisa -->
+
+            <script>
+                       function executar(){
+                       var texto = document.getElementById('texto').value;
+                       var lista = document.getElementById('historico');
+                       var adicionar = true;
+
+                       var opt = document.createElement('option');
+
+                       for (i = 0; i < lista.options.lenght; i++){
+                             
+                             if (texto == lista.options[i].value){
+                               adicionar = false;
+                             }
+                       }
+                       if (adicionar == true){
+                             opt.value = texto;
+                             lista.appendChild(opt);
+                       }
+                  }
+
+            </script>             
+
             <li><a><form class="pesquisa">
                    <div id="divpesquisa"> <input type="search" id="texto"  list="historico" placeholder="Pesquisar">
-                    <img src="Imagens/lupa.png"  class="btn" id="botao" type ="button" > </div>
+                    <img src="Imagens/lupa.png"  class="btn" id="botao" type ="button" onclick="executar()" > </div>
 
                     <datalist id="historico">
-                         <option value="Teste"></option>
                          <option value="Manicure"></option>
                          <option value="Cabelo"></option>
                          <option value="Unha"></option>
                     </datalist>
             </form></a></li>
             <script>
-                 
-                    $('#botao').hide(1)
+                 $('#botao').hide(1)
 
                     $('#divpesquisa').mouseenter(function(){
                       $('#botao').show(90);
@@ -50,6 +71,7 @@
                         $('#botao').hide(90)
                       })
                     })
+                    
            </script>
             <li><a href="#vantagens">Vantagens</a></li>
             <li><a href="#introducao">Introdução</a></li>
@@ -107,7 +129,7 @@
       </div>
     </form>
   </div>
-
+  
 
   <script src="js/jquery.js"></script>
   <script type="text/javascript" src="js/materialize.js"></script>
